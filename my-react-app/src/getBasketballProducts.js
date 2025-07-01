@@ -6,7 +6,8 @@ function getBasketballProducts() {
       image: require('./Assets/basket-ball.png'),
       price: 49.99,
       description: 'High-quality leather basketball suitable for indoor and outdoor play.',
-      category: 'Balls'
+      category: 'Balls',
+      sport: 'Basketball',
     },
     {
       id: 2,
@@ -14,7 +15,8 @@ function getBasketballProducts() {
       image: require('./Assets/armsleeve.png'),
       price: 14.99,
       description: 'Compression arm sleeve for better blood circulation and style on court.',
-      category: 'General Equipment'
+      category: 'General Equipment',
+      sport: 'Basketball',
     },
     {
       id: 3,
@@ -22,7 +24,8 @@ function getBasketballProducts() {
       image: require('./Assets/basketballshoes.png'),
       price: 199.99,
       description: 'Durable basketball shoes designed for performance and comfort.',
-      category: 'Shoes'
+      category: 'Shoes',
+      sport: 'Basketball',
     },
     {
       id: 4,
@@ -30,7 +33,8 @@ function getBasketballProducts() {
       image: require('./Assets/headband.png'),
       price: 19.99,
       description: 'Moisture-wicking headband to keep sweat out of your eyes during the game.',
-      category: 'General Equipment'
+      category: 'General Equipment',
+      sport: 'Basketball',
     },
     {
       id: 5,
@@ -38,7 +42,8 @@ function getBasketballProducts() {
       image: require('./Assets/shorts.png'),
       price: 24.99,
       description: 'Lightweight, breathable basketball shorts with excellent mobility.',
-      category: 'General Equipment'
+      category: 'General Equipment',
+      sport: 'Basketball',
     },
     {
       id: 6,
@@ -46,7 +51,8 @@ function getBasketballProducts() {
       image: require('./Assets/hoop.jpg'),
       price: 1299.99,
       description: 'Adjustable portable hoop perfect for backyard practice and drills.',
-      category: 'Miscellaneous'
+      category: 'Miscellaneous',
+      sport: 'Basketball',
     }
   ];
 }

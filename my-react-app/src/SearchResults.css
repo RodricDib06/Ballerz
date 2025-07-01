@@ -1,0 +1,17 @@
+.search-results-page {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.fancy-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffc107;
+}
+
+.price-tag {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffc107;
+}

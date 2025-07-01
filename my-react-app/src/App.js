@@ -6,7 +6,7 @@ import Home from './BallerzHome.js';
 import Basketball from './Basketball.js'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import SearchResults from './SearchResults';
 function App() {
   return (
     <Router>
@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/basketball" element={<Basketball />} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
     </Router>
   );
