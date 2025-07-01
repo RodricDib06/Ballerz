@@ -1,0 +1,88 @@
+/* BallerzHome.css */
+.home-background {
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(65, 63, 63, 0.8); /* updated darker overlay */
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.text-contrast h5,
+.text-contrast p,
+.text-contrast .lead,
+.text-contrast h3 {
+  color: #f0f0f0; /* bright text for contrast */
+}
+
+form input[type="search"] {
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+form input[type="search"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+form button {
+  font-size: 1rem;
+  padding: 8px 25px;
+}
+
+button.btn-outline-dark {
+  border-radius: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .text-contrast h5 {
+    font-size: 1.1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form input[type="search"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
