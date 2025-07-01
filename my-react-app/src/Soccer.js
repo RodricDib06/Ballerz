@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
-import getBasketballProducts from './getBasketballProducts';
+import getSoccerProducts from './getSoccerProducts';
 import './Basketball.css';
 import { useNavigate } from 'react-router-dom';
 
-function Basketball() {
-  const allProducts = getBasketballProducts();
+function Soccer() {
+  const allProducts = getSoccerProducts();
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
   const [priceFilter, setPriceFilter] = useState('All');
@@ -29,7 +29,7 @@ function Basketball() {
 
   return (
     <Container className="page py-5">
-      <h2 className="text-center text-uppercase fancy-title mb-4">Our Basketball Items</h2>
+      <h2 className="text-center text-uppercase fancy-title mb-4">Our Soccer Items</h2>
 
       {/* Search Bar */}
       <Row className="justify-content-center mb-4">
@@ -37,7 +37,7 @@ function Basketball() {
           <Form className="d-flex">
             <Form.Control
               type="text"
-              placeholder="Search for basketball gear..."
+              placeholder="Search for soccer gear..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="me-2"
@@ -112,4 +112,4 @@ function Basketball() {
   );
 }
 
-export default Basketball;
+export default Soccer;

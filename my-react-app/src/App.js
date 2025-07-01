@@ -6,6 +6,8 @@ import Home from './BallerzHome.js';
 import Basketball from './Basketball.js'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Volleyball from './Volleyball.js';
+import Soccer from './Soccer.js'
 import SearchResults from './SearchResults';
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/basketball" element={<Basketball />} />
+        <Route path="/volleyball" element={<Volleyball />} />
+        <Route path="/soccer" element={<Soccer />} />
         <Route path="/search" element={<SearchResults />} />
       </Routes>
     </Router>
