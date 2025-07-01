@@ -3,6 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import getBasketballProducts from './getBasketballProducts'; // Extend this later for all sports
 import './SearchResults.css'; // Optional for page-specific styles
+import getVolleyballProducts from './getVolleyballProducts';
+import getSoccerProducts from './getSoccerProducts';
+
 
 function SearchResults() {
   const navigate = useNavigate();
@@ -15,10 +18,12 @@ function SearchResults() {
   const selectedPrice = query.get('price') || '';
 
   // For demo: use basketball only; later you can merge products from other sports
-  const allProducts = getBasketballProducts().map(p => ({
-    ...p,
-    sport: 'Basketball' // Extend later with real sport fields
-  }));
+  const allProducts = [
+  ...getBasketballProducts(),
+  ...getVolleyballProducts(),
+  ...getSoccerProducts()
+];
+
 
   const filteredProducts = allProducts.filter(product => {
     const matchesSearch =

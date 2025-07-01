@@ -14,7 +14,7 @@ function BallerzNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/sports">Sports Selection</Nav.Link>
+           <Nav.Link as={Link} to="/#sports">Sports Selection</Nav.Link>
             <Nav.Link as={Link} to="/cart"><FaShoppingCart size={20} /></Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -133,7 +133,7 @@ function BallerzHome() {
 
           {/* Sports Cards */}
           <div id="sports-section">
-            <h3 className="text-center text-light mb-4">Sports Selections</h3>
+            <h3 className="text-center text-light mb-4">Sports Selection</h3>
           </div>
 
           <Row>

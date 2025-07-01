@@ -3,7 +3,7 @@ function getSoccerProducts() {
     {
       id: 1,
       name: 'Pro Soccer Ball',
-      image: require('./Assets/soccer-ball.jpg'),
+      image: require('./Assets/soccer-ball.png'),
       price: 44.99,
       description: 'High-quality soccer ball for professional and recreational play.',
       category: 'Balls',
