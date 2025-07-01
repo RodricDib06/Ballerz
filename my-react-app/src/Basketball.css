@@ -82,4 +82,15 @@
   .price-tag {
     font-size: 1rem;
   }
+  form .form-control,
+   form .form-select {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+form .btn-warning {
+  font-weight: bold;
+}
+
 }

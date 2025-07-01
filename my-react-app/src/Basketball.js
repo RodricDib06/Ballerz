@@ -1,44 +1,112 @@
-// Basketball.js
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import getBasketballProducts from './getBasketballProducts';
 import './Basketball.css';
 import { useNavigate } from 'react-router-dom';
 
 function Basketball() {
-  const products = getBasketballProducts();
+  const allProducts = getBasketballProducts();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('All');
+  const [priceFilter, setPriceFilter] = useState('All');
   const navigate = useNavigate();
+
+  // Handle filtering and searching
+  const filteredProducts = allProducts.filter((product) => {
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesCategory = categoryFilter === 'All' || product.category === categoryFilter;
+
+    const matchesPrice =
+      priceFilter === 'All' ||
+      (priceFilter === 'Under50' && product.price < 50) ||
+      (priceFilter === '50to200' && product.price >= 50 && product.price <= 200) ||
+      (priceFilter === 'Above200' && product.price > 200);
+
+    return matchesSearch && matchesCategory && matchesPrice;
+  });
 
   return (
     <Container className="basketball-page py-5">
-      <h2 className="text-center text-uppercase fancy-title mb-5">Our Basketball Items</h2>
+      <h2 className="text-center text-uppercase fancy-title mb-4">Our Basketball Items</h2>
+
+      {/* Search Bar */}
+      <Row className="justify-content-center mb-4">
+        <Col md={6}>
+          <Form className="d-flex">
+            <Form.Control
+              type="text"
+              placeholder="Search for basketball gear..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="me-2"
+            />
+            <Button variant="warning" onClick={() => setSearchTerm(searchTerm.trim())}>
+              Search
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+
+      {/* Filters */}
+      <Row className="justify-content-center mb-4">
+        <Col md={3}>
+          <Form.Select
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+          >
+            <option value="All">All Categories</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Balls">Balls</option>
+            <option value="General Equipment">General Equipment</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </Form.Select>
+        </Col>
+        <Col md={3}>
+          <Form.Select
+            value={priceFilter}
+            onChange={(e) => setPriceFilter(e.target.value)}
+          >
+            <option value="All">All Prices</option>
+            <option value="Under50">Under $50</option>
+            <option value="50to200">$50 - $200</option>
+            <option value="Above200">Above $200</option>
+          </Form.Select>
+        </Col>
+      </Row>
+
+      {/* Product Cards */}
       <Row>
-        {products.map((product) => (
-         <Col key={product.id} md={4} className="mb-4">
-            <Card className="product-card h-100 text-white">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <Col key={product.id} md={4} className="mb-4">
+              <Card className="product-card h-100 text-white">
                 <div className="product-img-wrapper">
-                <Card.Img variant="top" src={product.image} />
+                  <Card.Img variant="top" src={product.image} />
                 </div>
                 <Card.Body className="d-flex flex-column justify-content-between">
-                <div>
+                  <div>
                     <Card.Title className="fw-bold text-shadow">{product.name}</Card.Title>
                     <Card.Text className="product-description">{product.description}</Card.Text>
-                </div>
-                <div className="d-flex justify-content-between align-items-center">
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
                     <span className="price-tag">${product.price.toFixed(2)}</span>
                     <Button
-                    variant="light"
-                    className="rounded-pill fw-semibold"
-                    onClick={() => navigate(`/product/${product.id}`)}
+                      variant="light"
+                      className="rounded-pill fw-semibold"
+                      onClick={() => navigate(`/product/${product.id}`)}
                     >
-                    View
+                      View
                     </Button>
-                </div>
+                  </div>
                 </Card.Body>
-            </Card>
+              </Card>
             </Col>
-
-        ))}
+          ))
+        ) : (
+          <p className="text-center mt-5">No products match your criteria.</p>
+        )}
       </Row>
     </Container>
   );
