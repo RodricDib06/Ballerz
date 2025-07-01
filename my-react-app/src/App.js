@@ -7,6 +7,7 @@ import Basketball from './Basketball.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Volleyball from './Volleyball.js';
+import Soccer from './Soccer.js'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/basketball" element={<Basketball />} />
         <Route path="/volleyball" element={<Volleyball />} />
+        <Route path="/soccer" element={<Soccer />} />
       </Routes>
     </Router>
   );
