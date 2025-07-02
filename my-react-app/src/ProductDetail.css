@@ -1,0 +1,8 @@
+.product-detail-card {
+  background: linear-gradient(to bottom right, #fdfdfd, #f0f0f0);
+  transition: transform 0.3s ease;
+}
+
+.product-detail-card:hover {
+  transform: translateY(-4px);
+}

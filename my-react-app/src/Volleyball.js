@@ -32,9 +32,9 @@ function Volleyball() {
       <h2 className="text-center text-uppercase fancy-title mb-4">Our Volleyball Items</h2>
 
       {/* Search Bar */}
-      <Row className="justify-content-center mb-4">
+      <Row className="justify-content-center bg-transparent mb-4">
         <Col md={6}>
-          <Form className="d-flex">
+          <Form className="d-flex bg-transparent border-0 shadow-none">
             <Form.Control
               type="text"
               placeholder="Search for volleyball gear..."

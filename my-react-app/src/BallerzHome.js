@@ -57,7 +57,7 @@ function BallerzHome() {
         <Container>
           {/* Search Bar */}
           <Form
-              className="d-flex justify-content-center mb-3"
+              className="d-flex justify-content-center bg-transparent border-0 shadow-none mb-3"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSearch();

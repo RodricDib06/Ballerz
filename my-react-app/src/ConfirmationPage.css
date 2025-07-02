@@ -1,0 +1,37 @@
+/* ConfirmationPage.css */
+
+.confirmation-container {
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.survey-question {
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.star {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.star:hover,
+.star.active {
+  color: #ffc107;
+}
+
+.survey-submit {
+  margin-top: 2rem;
+  text-align: center;
+}

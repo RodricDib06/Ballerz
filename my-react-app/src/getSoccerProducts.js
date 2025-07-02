@@ -1,7 +1,7 @@
 function getSoccerProducts() {
   return [
     {
-      id: 1,
+      id: 13,
       name: 'Pro Soccer Ball',
       image: require('./Assets/soccer-ball.png'),
       price: 44.99,
@@ -10,7 +10,7 @@ function getSoccerProducts() {
       sport: 'Soccer'
     },
     {
-      id: 2,
+      id: 14,
       name: 'Shin Guards',
       image: require('./Assets/soccer-shin-guards.jpg'),
       price: 19.99,
@@ -19,7 +19,7 @@ function getSoccerProducts() {
       sport: 'Soccer'
     },
     {
-      id: 3,
+      id: 15,
       name: 'Soccer Cleats',
       image: require('./Assets/soccer-cleats.jpg'),
       price: 189.99,
@@ -28,7 +28,7 @@ function getSoccerProducts() {
       sport: 'Soccer'
     },
     {
-      id: 4,
+      id: 16,
       name: 'Goalkeeper Gloves',
       image: require('./Assets/soccer-goalkeeper-gloves.jpg'),
       price: 34.99,
@@ -37,7 +37,7 @@ function getSoccerProducts() {
       sport: 'Soccer'
     },
     {
-      id: 5,
+      id: 17,
       name: 'Soccer Jersey',
       image: require('./Assets/soccer-jersey.jpg'),
       price: 59.99,
@@ -46,7 +46,7 @@ function getSoccerProducts() {
       sport: 'Soccer'
     },
     {
-      id: 6,
+      id: 18,
       name: 'Portable Goal',
       image: require('./Assets/soccer-goal.jpg'),
       price: 249.99,
