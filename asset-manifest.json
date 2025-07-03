@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ballerz/static/css/main.e95aab8b.css",
-    "main.js": "/Ballerz/static/js/main.7979bc50.js",
+    "main.js": "/Ballerz/static/js/main.35b6bea3.js",
     "static/js/453.b21a91d2.chunk.js": "/Ballerz/static/js/453.b21a91d2.chunk.js",
     "static/media/Basketball.png": "/Ballerz/static/media/Basketball.12d435145a74e0825468.png",
     "static/media/soccer-ball.png": "/Ballerz/static/media/soccer-ball.e6689f93eb35e89dd250.png",
@@ -27,11 +27,11 @@
     "static/media/volleyball-wrist-support.jpg": "/Ballerz/static/media/volleyball-wrist-support.d4244dda2aa0af36643a.jpg",
     "index.html": "/Ballerz/index.html",
     "main.e95aab8b.css.map": "/Ballerz/static/css/main.e95aab8b.css.map",
-    "main.7979bc50.js.map": "/Ballerz/static/js/main.7979bc50.js.map",
+    "main.35b6bea3.js.map": "/Ballerz/static/js/main.35b6bea3.js.map",
     "453.b21a91d2.chunk.js.map": "/Ballerz/static/js/453.b21a91d2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e95aab8b.css",
-    "static/js/main.7979bc50.js"
+    "static/js/main.35b6bea3.js"
   ]
 }
