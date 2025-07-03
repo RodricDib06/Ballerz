@@ -41,7 +41,7 @@ function Soccer() {
       {/* Search Bar */}
       <Row className="justify-content-center bg-transparent mb-4">
         <Col md={6}>
-          <Form className="d-flex bg-transparent border-0 shadow-none">
+          <Form className="d-flex flex-column flex-md-row gap-2 bg-transparent border-0 shadow-none">
             <Form.Control
               type="text"
               placeholder="Search for soccer gear..."
