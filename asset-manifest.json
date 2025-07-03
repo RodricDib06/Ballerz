@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Ballerz/static/css/main.ebbc8d37.css",
+    "main.js": "/Ballerz/static/js/main.cdbfb15a.js",
+    "static/js/453.b21a91d2.chunk.js": "/Ballerz/static/js/453.b21a91d2.chunk.js",
+    "static/media/Basketball.png": "/Ballerz/static/media/Basketball.12d435145a74e0825468.png",
+    "static/media/soccer-ball.png": "/Ballerz/static/media/soccer-ball.e6689f93eb35e89dd250.png",
+    "static/media/shorts.png": "/Ballerz/static/media/shorts.2fd9c575f8654520d511.png",
+    "static/media/hoop.jpg": "/Ballerz/static/media/hoop.c0afba7b5b7682b26479.jpg",
+    "static/media/basket-ball.png": "/Ballerz/static/media/basket-ball.89f3e2bb1b0343472690.png",
+    "static/media/soccer-goalkeeper-gloves.jpg": "/Ballerz/static/media/soccer-goalkeeper-gloves.74692ee3791a513f9ef8.jpg",
+    "static/media/armsleeve.png": "/Ballerz/static/media/armsleeve.67fbfa2c38208b20e888.png",
+    "static/media/Background.png": "/Ballerz/static/media/Background.a982e4139710d70c75af.png",
+    "static/media/Soccer.png": "/Ballerz/static/media/Soccer.a596e32400949afb996c.png",
+    "static/media/headband.png": "/Ballerz/static/media/headband.4b207ff772a01ed4a198.png",
+    "static/media/basketballshoes.png": "/Ballerz/static/media/basketballshoes.82a17da216c3750e79c6.png",
+    "static/media/soccer-goal.jpg": "/Ballerz/static/media/soccer-goal.c465f2b0d6a7f388fad4.jpg",
+    "static/media/volleyball-item.jpg": "/Ballerz/static/media/volleyball-item.3a71b9ccb3be18f06b6a.jpg",
+    "static/media/volleyball-net.jpeg": "/Ballerz/static/media/volleyball-net.0ba4e76864ccd9db1ee3.jpeg",
+    "static/media/soccer-shin-guards.jpg": "/Ballerz/static/media/soccer-shin-guards.031f635992242333c3fc.jpg",
+    "static/media/volleyball-kneepads.jpg": "/Ballerz/static/media/volleyball-kneepads.b9a24908a6e222b7550a.jpg",
+    "static/media/volleyballshoes.jpg": "/Ballerz/static/media/volleyballshoes.256bb187e3074730326e.jpg",
+    "static/media/Volleyball.png": "/Ballerz/static/media/Volleyball.db5c2535dfcd9e5ab886.png",
+    "static/media/volleyball-ankle-brace.jpg": "/Ballerz/static/media/volleyball-ankle-brace.473213f068c797a53bd1.jpg",
+    "static/media/soccer-cleats.jpg": "/Ballerz/static/media/soccer-cleats.b13baa039910160b9fb7.jpg",
+    "static/media/soccer-jersey.jpg": "/Ballerz/static/media/soccer-jersey.27f1df2f9ab6ba9e39f1.jpg",
+    "static/media/volleyball-wrist-support.jpg": "/Ballerz/static/media/volleyball-wrist-support.d4244dda2aa0af36643a.jpg",
+    "index.html": "/Ballerz/index.html",
+    "main.ebbc8d37.css.map": "/Ballerz/static/css/main.ebbc8d37.css.map",
+    "main.cdbfb15a.js.map": "/Ballerz/static/js/main.cdbfb15a.js.map",
+    "453.b21a91d2.chunk.js.map": "/Ballerz/static/js/453.b21a91d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebbc8d37.css",
+    "static/js/main.cdbfb15a.js"
+  ]
+}
