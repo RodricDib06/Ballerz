@@ -1,11 +1,10 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import getBasketballProducts from './getBasketballProducts'; // Extend this later for all sports
-import './SearchResults.css'; // Optional for page-specific styles
+import getBasketballProducts from './getBasketballProducts';
 import getVolleyballProducts from './getVolleyballProducts';
 import getSoccerProducts from './getSoccerProducts';
-
+import './SearchResults.css';
 
 function SearchResults() {
   const navigate = useNavigate();
@@ -16,14 +15,13 @@ function SearchResults() {
   const selectedSport = query.get('sport') || '';
   const selectedCategory = query.get('category') || '';
   const selectedPrice = query.get('price') || '';
+  const sortOrder = query.get('sort') || '';
 
-  // For demo: use basketball only; later you can merge products from other sports
   const allProducts = [
-  ...getBasketballProducts(),
-  ...getVolleyballProducts(),
-  ...getSoccerProducts()
-];
-
+    ...getBasketballProducts(),
+    ...getVolleyballProducts(),
+    ...getSoccerProducts()
+  ];
 
   const filteredProducts = allProducts.filter(product => {
     const matchesSearch =
@@ -45,6 +43,13 @@ function SearchResults() {
 
     return matchesSearch && matchesSport && matchesCategory && matchesPrice;
   });
+
+  // Apply sorting
+  if (sortOrder === 'lowToHigh') {
+    filteredProducts.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === 'highToLow') {
+    filteredProducts.sort((a, b) => b.price - a.price);
+  }
 
   return (
     <Container className="search-results-page py-5">

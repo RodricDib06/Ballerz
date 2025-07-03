@@ -15,15 +15,27 @@ function CheckoutForm() {
     let valid = true;
     const newErrors = {};
 
-    // Required fields check
-    ['firstName', 'lastName', 'email', 'phone', 'visa', 'cvv', 'expDate'].forEach((field) => {
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'email',
+      'phone',
+      'address',
+      'city',
+      'province',
+      'postalCode',
+      'visa',
+      'cvv',
+      'expDate'
+    ];
+
+    requiredFields.forEach((field) => {
       if (!form[field]) {
         newErrors[field] = 'Required';
         valid = false;
       }
     });
 
-    // Custom validations
     if (form.firstName && form.firstName.length < 6) {
       newErrors.firstName = 'First name must be at least 6 characters';
       valid = false;
@@ -44,6 +56,22 @@ function CheckoutForm() {
       valid = false;
     }
 
+    if (form.address) {
+      const address = form.address.trim();
+      const hasLetters = /[a-zA-Z]/.test(address);
+      const hasNumbers = /[0-9]/.test(address);
+
+      if (address.length < 6 || !hasLetters || !hasNumbers) {
+        newErrors.address = 'Address must be at least 6 characters and include both letters and numbers';
+        valid = false;
+      }
+    }
+
+    if (form.postalCode && !/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(form.postalCode)) {
+      newErrors.postalCode = 'Invalid postal code (e.g., K1A 0B1)';
+      valid = false;
+    }
+
     if (form.visa && !/^\d{12}$/.test(form.visa)) {
       newErrors.visa = 'Visa number must be exactly 12 digits';
       valid = false;
@@ -55,12 +83,10 @@ function CheckoutForm() {
     }
 
     if (form.expDate) {
-      // Format MM/YY
       if (!/^\d{2}\/\d{2}$/.test(form.expDate)) {
         newErrors.expDate = 'Expiration date must be in MM/YY format';
         valid = false;
       } else {
-        // Optional: Validate month is between 01 and 12
         const [month] = form.expDate.split('/');
         if (parseInt(month, 10) < 1 || parseInt(month, 10) > 12) {
           newErrors.expDate = 'Expiration month must be between 01 and 12';
@@ -74,23 +100,29 @@ function CheckoutForm() {
   };
 
   const handleExpDateChange = (e) => {
-    let val = e.target.value;
-    // Remove non-digits and slash
-    val = val.replace(/[^\d]/g, '');
-
+    let val = e.target.value.replace(/[^\d]/g, '');
     if (val.length > 2) {
       val = val.slice(0, 2) + '/' + val.slice(2, 4);
     }
-
     if (val.length > 5) val = val.slice(0, 5);
-
     setForm({ ...form, expDate: val });
+  };
+
+  const handleVisaChange = (e) => {
+    const raw = e.target.value.replace(/\D/g, '').slice(0, 12); // digits only, max 12
+    setForm({ ...form, visa: raw });
+  };
+
+  const getMaskedVisa = () => {
+    const visa = form.visa || '';
+    const visible = visa.slice(-4);
+    return visa ? '**** **** **** ' + visible : '';
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-        clearCart();
+      clearCart();
       navigate('/confirmation');
     }
   };
@@ -156,8 +188,66 @@ function CheckoutForm() {
             type="text"
             value={form.address || ''}
             onChange={(e) => setForm({ ...form, address: e.target.value })}
+            isInvalid={!!errors.address}
           />
+          <Form.Control.Feedback type="invalid">{errors.address}</Form.Control.Feedback>
         </Form.Group>
+
+        <Row>
+          <Col md={4}>
+            <Form.Group controlId="city" className="mb-3">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="text"
+                value={form.city || ''}
+                onChange={(e) => setForm({ ...form, city: e.target.value })}
+                isInvalid={!!errors.city}
+              />
+              <Form.Control.Feedback type="invalid">{errors.city}</Form.Control.Feedback>
+            </Form.Group>
+          </Col>
+
+          <Col md={4}>
+           <Form.Group controlId="province" className="mb-3">
+  <Form.Label>Province/Territory</Form.Label>
+  <Form.Select
+    value={form.province || ''}
+    onChange={(e) => setForm({ ...form, province: e.target.value })}
+    isInvalid={!!errors.province}
+  >
+    <option value="">Select a province or territory</option>
+    <option value="Alberta">Alberta</option>
+    <option value="British Columbia">British Columbia</option>
+    <option value="Manitoba">Manitoba</option>
+    <option value="New Brunswick">New Brunswick</option>
+    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+    <option value="Nova Scotia">Nova Scotia</option>
+    <option value="Ontario">Ontario</option>
+    <option value="Prince Edward Island">Prince Edward Island</option>
+    <option value="Quebec">Quebec</option>
+    <option value="Saskatchewan">Saskatchewan</option>
+    <option value="Northwest Territories">Northwest Territories</option>
+    <option value="Nunavut">Nunavut</option>
+    <option value="Yukon">Yukon</option>
+  </Form.Select>
+  <Form.Control.Feedback type="invalid">{errors.province}</Form.Control.Feedback>
+</Form.Group>
+
+          </Col>
+
+          <Col md={4}>
+            <Form.Group controlId="postalCode" className="mb-3">
+              <Form.Label>Postal Code</Form.Label>
+              <Form.Control
+                type="text"
+                value={form.postalCode || ''}
+                onChange={(e) => setForm({ ...form, postalCode: e.target.value })}
+                isInvalid={!!errors.postalCode}
+              />
+              <Form.Control.Feedback type="invalid">{errors.postalCode}</Form.Control.Feedback>
+            </Form.Group>
+          </Col>
+        </Row>
 
         <Row>
           <Col md={4}>
@@ -166,8 +256,8 @@ function CheckoutForm() {
               <Form.Control
                 type="text"
                 maxLength="12"
-                value={form.visa || ''}
-                onChange={(e) => setForm({ ...form, visa: e.target.value })}
+                value={getMaskedVisa()}
+                onChange={handleVisaChange}
                 isInvalid={!!errors.visa}
               />
               <Form.Control.Feedback type="invalid">{errors.visa}</Form.Control.Feedback>

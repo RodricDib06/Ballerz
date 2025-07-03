@@ -21,6 +21,7 @@ function BallerzHome() {
   const [selectedSport, setSelectedSport] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
+  const [sortOrder, setSortOrder] = useState('');
 
   useEffect(() => {
     if (location.hash === '#sports') {
@@ -38,6 +39,7 @@ function BallerzHome() {
     if (selectedSport) params.append('sport', selectedSport);
     if (selectedCategory) params.append('category', selectedCategory);
     if (selectedPrice) params.append('price', selectedPrice);
+    if (sortOrder) params.append('sort', sortOrder); // Sort field
 
     navigate(`/search?${params.toString()}`);
   };
@@ -57,12 +59,12 @@ function BallerzHome() {
         <Container>
           {/* Search Bar */}
           <Form
-              className="d-flex justify-content-center bg-transparent border-0 shadow-none mb-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSearch();
-              }}
-            >
+            className="d-flex justify-content-center bg-transparent border-0 shadow-none mb-3"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSearch();
+            }}
+          >
             <Form.Control
               type="search"
               placeholder="Find what you are looking for..."
@@ -110,6 +112,16 @@ function BallerzHome() {
                 <option value="Under50">Under $50</option>
                 <option value="50to200">$50 - $200</option>
                 <option value="Above200">Above $200</option>
+              </Form.Select>
+            </Col>
+            <Col md={3} className="mb-2">
+              <Form.Select
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+              >
+                <option value="">Sort by</option>
+                <option value="lowToHigh">Price: Low to High</option>
+                <option value="highToLow">Price: High to Low</option>
               </Form.Select>
             </Col>
           </Row>

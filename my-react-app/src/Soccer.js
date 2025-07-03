@@ -9,10 +9,12 @@ function Soccer() {
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
   const [priceFilter, setPriceFilter] = useState('All');
+  const [sortOrder,setSortOrder] = useState('');
   const navigate = useNavigate();
 
   // Handle filtering and searching
-  const filteredProducts = allProducts.filter((product) => {
+  const filteredProducts = allProducts
+  .filter((product) => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           product.description.toLowerCase().includes(searchTerm.toLowerCase());
 
@@ -25,7 +27,12 @@ function Soccer() {
       (priceFilter === 'Above200' && product.price > 200);
 
     return matchesSearch && matchesCategory && matchesPrice;
-  });
+  })
+  .sort((a, b) => {
+      if (sortOrder === 'lowToHigh') return a.price - b.price;
+      if (sortOrder === 'highToLow') return b.price - a.price;
+      return 0;
+    });
 
   return (
     <Container className="page py-5">
@@ -74,6 +81,16 @@ function Soccer() {
             <option value="Above200">Above $200</option>
           </Form.Select>
         </Col>
+        <Col md={3}>
+          <Form.Select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="">Sort by</option>
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+          </Form.Select>
+        </Col>
       </Row>
 
       {/* Product Cards */}
@@ -91,7 +108,7 @@ function Soccer() {
                     <Card.Text className="product-description">{product.description}</Card.Text>
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price-tag">${product.price.toFixed(2)}</span>
+                    <span className="price-tag text-black">${product.price.toFixed(2)}</span>
                     <Button
                       variant="light"
                       className="rounded-pill fw-semibold"
