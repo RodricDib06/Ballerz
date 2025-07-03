@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Ballerz/static/css/main.ebbc8d37.css",
-    "main.js": "/Ballerz/static/js/main.cdbfb15a.js",
+    "main.css": "/Ballerz/static/css/main.e95aab8b.css",
+    "main.js": "/Ballerz/static/js/main.7979bc50.js",
     "static/js/453.b21a91d2.chunk.js": "/Ballerz/static/js/453.b21a91d2.chunk.js",
     "static/media/Basketball.png": "/Ballerz/static/media/Basketball.12d435145a74e0825468.png",
     "static/media/soccer-ball.png": "/Ballerz/static/media/soccer-ball.e6689f93eb35e89dd250.png",
@@ -26,12 +26,12 @@
     "static/media/soccer-jersey.jpg": "/Ballerz/static/media/soccer-jersey.27f1df2f9ab6ba9e39f1.jpg",
     "static/media/volleyball-wrist-support.jpg": "/Ballerz/static/media/volleyball-wrist-support.d4244dda2aa0af36643a.jpg",
     "index.html": "/Ballerz/index.html",
-    "main.ebbc8d37.css.map": "/Ballerz/static/css/main.ebbc8d37.css.map",
-    "main.cdbfb15a.js.map": "/Ballerz/static/js/main.cdbfb15a.js.map",
+    "main.e95aab8b.css.map": "/Ballerz/static/css/main.e95aab8b.css.map",
+    "main.7979bc50.js.map": "/Ballerz/static/js/main.7979bc50.js.map",
     "453.b21a91d2.chunk.js.map": "/Ballerz/static/js/453.b21a91d2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebbc8d37.css",
-    "static/js/main.cdbfb15a.js"
+    "static/css/main.e95aab8b.css",
+    "static/js/main.7979bc50.js"
   ]
 }
