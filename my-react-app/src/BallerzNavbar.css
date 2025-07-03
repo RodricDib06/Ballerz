@@ -1,29 +1,65 @@
 .navbar {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif; /* Sporty, modern font */
+  background: linear-gradient(90deg, #1a1a1a, #2c2c2c); /* Dark gradient for a sleek look */
+  box-shadow: 0 6px 12px rgba(255, 69, 0, 0.3); /* Fiery orange shadow */
+  padding: 1rem 2rem; /* More padding for a bold presence */
 }
 
 .navbar-brand {
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-weight: 800; /* Bolder for impact */
+  font-size: 2rem; /* Larger for prominence */
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px; /* More spacing for a dynamic feel */
+  color: #ffd700; /* Gold for a premium, sporty vibe */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05); /* Slight scale-up for interactivity */
+  color: #ff4500; /* Fiery orange on hover */
 }
 
 .nav-link {
-  font-size: 1.1rem;
-  margin-left: 1rem;
-  transition: color 0.3s ease;
+  font-size: 1.2rem; /* Slightly larger for readability */
+  margin-left: 1.5rem; /* More spacing for a clean layout */
+  color: #ffffff; /* White for contrast */
+  font-weight: 600; /* Bold for a confident look */
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Uppercase for a sporty edge */
 }
 
 .nav-link:hover {
-  color: #ffd700 !important; /* Sports-themed gold hover */
+  color: #ffd700 !important; /* Keep the gold hover for consistency */
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Glowing effect */
+  transform: translateY(-2px); /* Subtle lift on hover */
 }
 
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: #ff4500; /* Vibrant orange border */
+  background-color: #2a2a2a; /* Dark background for contrast */
+  border-radius: 10px; /* Rounded for a modern look */
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: #ff4500; /* Orange background on hover */
+  border-color: #ffd700; /* Gold border for flair */
 }
 
 .navbar-toggler:focus {
-  box-shadow: none;
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Fiery glow */
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.6rem; /* Slightly smaller for mobile */
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    margin-left: 0;
+    padding: 0.75rem 0; /* More padding for mobile menu */
+  }
 }

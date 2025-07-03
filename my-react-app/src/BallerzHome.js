@@ -68,12 +68,12 @@ function BallerzHome() {
             <Form.Control
               type="search"
               placeholder="Find what you are looking for..."
-              className="me-2 shadow"
+              className="me-2 shadow text-white"
               style={{ maxWidth: '400px', borderRadius: '25px', padding: '10px 20px' }}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant="primary" className="px-4 rounded-pill" onClick={handleSearch}>
+            <Button variant="primary" className="px-4 rounded-pill mx-4" onClick={handleSearch}>
               Search
             </Button>
           </Form>
@@ -131,16 +131,12 @@ function BallerzHome() {
             <h5 className="fw-normal">
               Ballerz’s mission is to help aspiring athletes and professionals find the right gear.
             </h5>
-            <p className="lead">
-              Whether you're gearing up for a tournament or practicing in your backyard,
-              we offer premium basketballs, volleyballs, soccer balls, jerseys, and more.
-            </p>
-            <p>
-              Our e-commerce platform is designed with passion for sports lovers, athletes, and teams.
-              With an easy-to-use interface and a wide variety of products, Ballerz is your trusted online store
-              for high-performance gear.
-            </p>
-            <p className="mt-3">Explore, choose, and play like a pro. Welcome to the court, field, and beyond – welcome to Ballerz!</p>
+            <h5 className="fw-normal mt-3">
+              Are you ready to take your game to the next level? You are at the right place!
+            </h5>
+            <h5 className="fw-normal mt-3">
+              Explore, choose, and play like a pro. Welcome to the court, field, and beyond – welcome to Ballerz!
+            </h5>
           </div>
 
           {/* Sports Cards */}
@@ -163,6 +159,7 @@ function BallerzHome() {
                       Top quality sports gear for champions.
                     </Card.Text>
                     <Button
+                      className="bg-dark border-warning"
                       variant="primary"
                       onClick={() => navigate(`/${sport.toLowerCase()}`)}
                     >

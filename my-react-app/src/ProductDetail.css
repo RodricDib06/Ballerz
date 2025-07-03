@@ -1,8 +1,84 @@
 .product-detail-card {
-  background: linear-gradient(to bottom right, #fdfdfd, #f0f0f0);
-  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a); /* Dark, sporty gradient */
+  border-radius: 20px; /* Rounder for a modern look */
+  border: 2px solid #ff4500; /* Vibrant orange border */
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3); /* Fiery shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Montserrat', sans-serif; /* Sporty font */
 }
 
 .product-detail-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px); /* More pronounced lift for energy */
+  box-shadow: 0 15px 30px rgba(255, 69, 0, 0.5); /* Stronger, fiery glow */
+}
+
+.product-detail-card .card-title {
+  color: #ffd700; /* Gold for a premium feel */
+  font-weight: 800; /* Bolder for impact */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+  font-size: 1.8rem; /* Larger for prominence */
+  text-transform: uppercase; /* Uppercase for a sporty edge */
+}
+
+.product-detail-card .card-text {
+  color: #ccc; /* Lighter gray for readability */
+  font-family: 'Roboto', sans-serif; /* Clean, approachable font */
+  font-size: 1.1rem; /* Slightly larger for clarity */
+}
+
+.product-detail-card img {
+  max-height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-detail-card img:hover {
+  transform: scale(1.05);
+}
+
+.cart-added-modal .modal-content {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #2a2a2a; /* Match product-detail-card gradient start */
+  border: 2px solid #ff4500; /* Vibrant orange border */
+  font-family: 'Montserrat', sans-serif; /* Consistent sporty font */
+}
+
+.cart-added-modal .modal-body {
+  padding: 2rem;
+  color: #ccc; /* Lighter gray for readability */
+}
+
+.cart-added-modal .btn-warning {
+  background-color: #facc15; /* Consistent yellow from CartPage.js */
+  border-color: #facc15;
+  color: #1a1a1a; /* Dark text for contrast */
+  font-family: 'Montserrat', sans-serif; /* Sporty font */
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-added-modal .btn-warning:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  border-color: #e0a800;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .product-detail-card .card-title {
+    font-size: 1.5rem; /* Smaller for mobile */
+  }
+
+  .product-detail-card .card-text {
+    font-size: 1rem;
+  }
+
+  .cart-added-modal .modal-content {
+    border-radius: 0.75rem; /* Slightly smaller for mobile */
+  }
+
+  .cart-added-modal .modal-body {
+    padding: 1.5rem;
+  }
 }

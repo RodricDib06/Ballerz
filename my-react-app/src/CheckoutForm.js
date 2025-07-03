@@ -113,12 +113,6 @@ function CheckoutForm() {
     setForm({ ...form, visa: raw });
   };
 
-  const getMaskedVisa = () => {
-    const visa = form.visa || '';
-    const visible = visa.slice(-4);
-    return visa ? '**** **** **** ' + visible : '';
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -256,7 +250,7 @@ function CheckoutForm() {
               <Form.Control
                 type="text"
                 maxLength="12"
-                value={getMaskedVisa()}
+                value={form.visa}
                 onChange={handleVisaChange}
                 isInvalid={!!errors.visa}
               />

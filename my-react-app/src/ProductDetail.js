@@ -1,11 +1,10 @@
-// ProductDetail.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Container, Row, Col, Button, Badge, InputGroup, FormControl, Modal } from 'react-bootstrap';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 import getBasketballProducts from './getBasketballProducts';
 import getVolleyballProducts from './getVolleyballProducts';
 import getSoccerProducts from './getSoccerProducts';
-import { Container, Row, Col, Button, Badge, InputGroup, FormControl } from 'react-bootstrap';
-import { FaPlus, FaMinus } from 'react-icons/fa';
 import './ProductDetail.css';
 
 function ProductDetail({ addToCart }) {
@@ -13,12 +12,20 @@ function ProductDetail({ addToCart }) {
   const allProducts = [
     ...getBasketballProducts(),
     ...getVolleyballProducts(),
-    ...getSoccerProducts()
+    ...getSoccerProducts(),
   ];
 
   const product = allProducts.find((p) => p.id.toString() === id);
-
   const [quantity, setQuantity] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+
+  // Auto-close modal after 3 seconds
+  useEffect(() => {
+    if (showModal) {
+      const timer = setTimeout(() => setShowModal(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showModal]);
 
   if (!product) {
     return <h2 className="text-center mt-5 text-danger">Product not found.</h2>;
@@ -31,6 +38,7 @@ function ProductDetail({ addToCart }) {
     for (let i = 0; i < quantity; i++) {
       addToCart(product);
     }
+    setShowModal(true);
   };
 
   return (
@@ -89,6 +97,29 @@ function ProductDetail({ addToCart }) {
           </div>
         </Col>
       </Row>
+
+      {/* Popup Modal */}
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        centered
+        aria-labelledby="cart-added-modal"
+        className="cart-added-modal"
+      >
+        <Modal.Body className="text-center py-4">
+          <h4 className="fw-bold mb-3">Added to Cart!</h4>
+          <p className="mb-4">
+            {quantity} x <span className="fw-semibold">{product.name}</span> added to your cart.
+          </p>
+          <Button
+            variant="warning"
+            className="rounded-pill px-4 py-2 fw-semibold"
+            onClick={() => setShowModal(false)}
+          >
+            Continue Shopping
+          </Button>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 }

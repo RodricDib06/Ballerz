@@ -1,0 +1,165 @@
+.cart-page {
+  background: linear-gradient(120deg, #ff4500, #1a1a1a, #2c Snape); /* Fiery gradient matching Basketball.css */
+  min-height: 100vh;
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Roboto', sans-serif; /* Clean body text font */
+  overflow-x: hidden;
+}
+
+.fancy-title {
+  font-family: 'Bebas Neue', sans-serif; /* Sporty header font */
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffd700; /* Gold for premium feel */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Bolder shadow */
+  text-transform: uppercase;
+}
+
+.cart-table {
+  background-color: #2a2a2a; /* Dark background for contrast */
+  border-radius: 15px;
+  border: 2px solid #ff4500; /* Orange border for pop */
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3); /* Fiery shadow */
+}
+
+.cart-table th {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  color: #ffd700; /* Gold headers */
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background-color: #1a1a1a; /* Darker header background */
+  border: 1px solid #ff4500;
+}
+
+.cart-table td {
+  color: #ccc; /* Light gray for readability */
+  vertical-align: middle;
+  border: 1px solid #ff4500; /* Orange borders */
+}
+
+.cart-img {
+  border: 2px solid #ffd700; /* Gold border for images */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.cart-img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.price-tag {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffd700; /* Gold for emphasis */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.text-shadow {
+  text-shadow:
+    0 0 3px rgba(0, 0, 0, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.7); /* Bolder shadow for readability */
+}
+
+.cart-btn {
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all epithelial
+
+}
+
+.cart-btn:hover {
+  transform: scale(1.05); /* Slight scale-up for interactivity */
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Fiery glow */
+}
+
+.cart-btn.btn-outline-secondary {
+  border-color: #ffd700; /* Gold border */
+  color: #ffd700;
+  background-color: #222;
+}
+
+.cart-btn.btn-outline-secondary:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.cart-btn.btn-outline-primary {
+  border-color: #ff4500; /* Orange border */
+  color: #ff4500;
+  background-color: #222;
+}
+
+.cart-btn.btn-outline-primary:hover {
+  background-color: #ff4500;
+  color: #fff;
+}
+
+.cart-btn.btn-outline-danger {
+  border-color: #ff0000; /* Red for remove action */
+  color: #ff0000;
+  background-color: #222;
+}
+
+.cart-btn.btn-outline-danger:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.checkout-btn {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff4500, #ffd700); /* Fiery gradient */
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+}
+
+.total-section {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .fancy-title {
+    font-size: 2.2rem;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    font-size: 0.95rem;
+  }
+
+  .price-tag {
+    font-size: 1.1rem;
+  }
+
+  .cart-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .checkout-btn {
+    font-size: 1rem;
+    padding: 0.65rem 1.5rem;
+  }
+}

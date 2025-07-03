@@ -108,7 +108,7 @@ function Volleyball() {
                     <Card.Text className="product-description">{product.description}</Card.Text>
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price-tag text-black">${product.price.toFixed(2)}</span>
+                    <span className="price-tag text-white">${product.price.toFixed(2)}</span>
                     <Button
                       variant="light"
                       className="rounded-pill fw-semibold"
