@@ -58,7 +58,7 @@ function Volleyball() {
 
       {/* Filters */}
       <Row className="justify-content-center mb-4">
-        <Col md={3}>
+        <Col md={3} className="mb-2">
           <Form.Select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
@@ -70,7 +70,7 @@ function Volleyball() {
             <option value="Miscellaneous">Miscellaneous</option>
           </Form.Select>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="mb-2">
           <Form.Select
             value={priceFilter}
             onChange={(e) => setPriceFilter(e.target.value)}
@@ -81,7 +81,7 @@ function Volleyball() {
             <option value="Above200">Above $200</option>
           </Form.Select>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="mb-2">
           <Form.Select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
