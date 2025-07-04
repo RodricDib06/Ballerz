@@ -43,7 +43,7 @@ function ProductDetail({ addToCart }) {
 
   return (
     <Container className="py-5">
-      <Row className="justify-content-center align-items-center">
+      <Row className="justify-content-center align-items-center text-warning">
         <Col md={10} lg={8}>
           <div className="product-detail-card shadow-lg rounded-4 p-4 bg-light">
             <Row>
